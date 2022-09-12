@@ -17,8 +17,8 @@ eventer.on('stopBot', async code => {
 
 async function prepare() {
     await Promise.all([
-        fs.rmdir('pages', {recursive: true}),
-        fs.rmdir('screenshots', {recursive: true})
+        fs.rm('pages', {recursive: true}),
+        fs.rm('screenshots', {recursive: true})
     ]);
     await Promise.all([
         fs.mkdir('pages', {recursive: true}),
