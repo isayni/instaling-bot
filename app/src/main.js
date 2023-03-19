@@ -43,8 +43,9 @@ const lastTyped = new Map();
 async function start() {
     const options = {
         headless: !config.show_browser,
+        executablePath: '/usr/bin/chromium-browser',
         devtools: config.open_devtools,
-        args: [`--disable-extensions-except=${__dirname}/../uBlock_Origin_1.34.0_0/`, `--load-extension=${__dirname}/../uBlock_Origin_1.34.0_0/`]
+        args: [`--no-sandbox`,`--disable-extensions-except=${__dirname}/../uBlock_Origin_1.34.0_0/`, `--load-extension=${__dirname}/../uBlock_Origin_1.34.0_0/`]
     };
 
     if (config.mute_audio) {
